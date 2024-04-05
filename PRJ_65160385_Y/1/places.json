@@ -1,0 +1,47 @@
+[
+    {
+        "name": "ถนนเยาวราช",
+        "location": "กรุงเทพมหานคร",
+        "img": "https://image-tc.galaxy.tf/wijpeg-4m5dshpuly1fenuvicn3nn496/chinatown_standard.jpg?crop=92%2C0%2C1416%2C1062"
+    },
+    {
+        "name": "ดอยอินทนนท์",
+        "location": "เชียงใหม่",
+        "img": "https://img.kapook.com/u/2021/sutasinee/11/3.jpg"
+    },
+    {
+        "name": "เกาะพะงัน",
+        "location": "สุราษฎร์ธานี",
+        "img": "https://s359.kapook.com/pagebuilder/49afbe66-7bf5-4a56-b762-2462b7c6bc17.jpg"
+    },
+    {
+        "name": "เขาค้อ",
+        "location": "เพชรบูรณ์",
+        "img": "https://s359.kapook.com/pagebuilder/d0c6453d-68db-429c-9ff1-2f18cef4a606.jpg"
+    },
+    {
+        "name": "เกาะช้าง",
+        "location": "ตราด",
+        "img": "https://img.kapook.com/u/2019/pattra/pattravelfeb2019/kohchang01.jpg"
+    },
+    {
+        "name": "จุดชมวิวเนินนางพญา",
+        "location": "จันทบุรี",
+        "img": "https://ik.imagekit.io/tvlk/blog/2019/03/%E0%B8%88%E0%B8%B8%E0%B8%94%E0%B8%8A%E0%B8%A1%E0%B8%A7%E0%B8%B4%E0%B8%A7%E0%B9%80%E0%B8%99%E0%B8%B4%E0%B8%99%E0%B8%99%E0%B8%B2%E0%B8%87%E0%B8%9E%E0%B8%8D%E0%B8%B2-800x534.jpg?tr=dpr-2,w-675"
+    },
+    {
+        "name": "เขื่อนศรีนครินทร์",
+        "location": "กาญจนบุรี",
+        "img": "https://s359.kapook.com/pagebuilder/d0673d97-00b8-41c0-a44f-5544f3beb462.jpg"
+    },
+    {
+        "name": "หาดพัทยา",
+        "location": "พัทยา",
+        "img": "https://cms.dmpcdn.com/travel/2022/11/09/ce5f2360-6013-11ed-9f74-e387bc60ef29_webp_original.jpg"
+    },
+    {
+        "name": "เกาะพีพี",
+        "location": "กระบี่",
+        "img": "https://images.pexels.com/photos/14573824/pexels-photo-14573824.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+]

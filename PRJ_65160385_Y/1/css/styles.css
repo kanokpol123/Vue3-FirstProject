@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Noto Sans Thai", sans-serif;
+}
+
+header h2 {
+    font-weight: 500;
+    color: #fefefe;
+}
+
+.display-5 {
+    color: #fefefe;
+    text-shadow: 2px 2px 8px #000000;
+}
+
+.lead {
+    color: #fefefe;
+}
+
+.nav .nav-link {
+    color: #fefefe;
+} 
+
+.col-md-3 .btn-primary {
+    color: #000000;
+    background-color: #ffffff;
+    border-color: #ffffff;
+    border-radius: 18px;
+}
+
+
+.back-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    object-fit: cover; /* จัดให้วิดีโอเต็มพื้นที่ */
+    z-index: -1;
+    filter: brightness(60%); /* ปรับความสว่างลงเหลือ 70% */
+}

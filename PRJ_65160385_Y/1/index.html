@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 px-5">
+      <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+        <h2>LOGO</h2>
+      </a>
+
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
+        <li><a href="#" class="nav-link px-2 link-dark">Features</a></li>
+        <li><a href="#" class="nav-link px-2 link-dark">Pricing</a></li>
+        <li><a href="#" class="nav-link px-2 link-dark">FAQs</a></li>
+        <li><a href="#" class="nav-link px-2 link-dark">About</a></li>
+      </ul>
+
+      <div class="col-md-3 text-end">
+        <button type="button" class="btn btn-primary">Sign-up</button>
+      </div>
+    </header>
+
+    <main>
+      <div class="hero-box">
+        <div class="px-4  text-center">
+          <video autoplay loop muted plays-inline class="back-video">
+            <source
+              src="/PRJ_65160385_Y/1/videos/4782483-uhd_3840_2160_30fps.mp4"
+              type="video/mp4"
+            />
+          </video>
+          <h1 class="display-5 fw-bold">ค้นหาสถานที่ท่องเที่ยว</h1>
+          <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4">
+                We bring you tailored travel experiences that cater to your adventurous spirit.
+            </p>
+
+            <div class="col-md-5 mx-auto">
+              <input
+                class="form-control border rounded-pill"
+                type="text"
+                id="searchInput"
+                placeholder="ค้นหาชื่อสถานที่..."
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container px-4 py-5 my-3" id="custom-cards">
+        <h2 class="pb-2 border-bottom">สถานที่ท่องเที่ยว</h2>
+        <p style="color: rgb(2, 118, 207);">ค้นพบสถานที่ท่องเที่ยวที่คุณค้นหา</p>
+        <div class="row" id="resultsList"></div>
+        
+      </div>
+
+
+    </main>
+  </body>
+</html>
+
+<script src="js/script.js"></script>
