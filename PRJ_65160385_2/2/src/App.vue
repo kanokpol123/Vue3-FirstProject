@@ -14,7 +14,7 @@
       </ul>
 
       <div class="col-md-3 text-end">
-        <button type="button" class="btn btn-primary">Sign-up</button>
+        <button @click="redirectToSignUp" type="button" class="btn btn-primary">Sign-up</button>
       </div>
     </header>
 
@@ -32,9 +32,9 @@
 
             <div class="col-md-5 mx-auto">
               <input
+                v-model="searchText"
                 class="form-control border rounded-pill"
                 type="text"
-                id="searchInput"
                 placeholder="ค้นหาชื่อสถานที่..."
               />
             </div>
@@ -46,7 +46,15 @@
         <h2 class="pb-2 border-bottom">สถานที่ท่องเที่ยว</h2>
         <p style="color: rgb(2, 118, 207);">ค้นพบสถานที่ท่องเที่ยวที่คุณค้นหา</p>
         <div class="row" id="resultsList">
-          
+          <div v-for="place in filteredPlaces" :key="place.id" class="col-md-4 mb-4">
+            <div @click="showPlaceDetails(place)" class="card h-100">
+              <img :src="place.img" :alt="place.name" class="card-img-top" style="width: 100%; height: 200px;">
+              <div class="card-body">
+                <h5 class="card-title">{{ place.name }}</h5>
+                <p class="card-text text-primary">ที่ตั้ง: {{ place.location }}</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
@@ -54,89 +62,40 @@
 </template>
 
 <script setup>
-document.addEventListener("DOMContentLoaded", function() {
-    const searchInput = document.getElementById("searchInput");
-    const resultsList = document.getElementById("resultsList");
+import { ref, onMounted, computed } from 'vue';
 
-    
-    fetch("places.json")
-        .then(response => response.json())
-        .then(data => {
-            localStorage.setItem("places", JSON.stringify(data));
+const searchText = ref('');
+const places = ref([]);
 
-            
-            searchInput.addEventListener("input", function() {
-                const searchText = searchInput.value.toLowerCase();
-                const places = JSON.parse(localStorage.getItem("places")) || [];
-
-                
-                const filteredPlaces = places.filter(place => place.name.toLowerCase().includes(searchText));
-
-                
-                displayResults(filteredPlaces);
-            });
-
-            
-            displayResults(data);
-        })
-        .catch(error => console.error("เกิดข้อผิดพลาดในการโหลดข้อมูล: ", error));
-
-
-    function displayResults(places) {
-        resultsList.innerHTML = "";
-        places.forEach(place => {
-            const li = document.createElement("div");
-            li.classList.add('col-md-4', 'mb-4'); 
-
-            
-            const cardDiv = document.createElement('div');
-            cardDiv.classList.add('card', 'h-100');
-
-            
-            const img = document.createElement("img");
-            img.src = place.img;
-            img.alt = place.name;
-            img.classList.add('card-img-top'); 
-
-            
-            img.style.width = "100%";
-            img.style.height = "200px";
-            
-            const cardBody = document.createElement('div');
-            cardBody.classList.add('card-body');
-
-            
-            const cardTitle = document.createElement('h5');
-            cardTitle.classList.add('card-title');
-            cardTitle.textContent = place.name;
-
-            
-            const cardLocation = document.createElement('p');
-            cardLocation.classList.add('card-text', 'text-primary');
-            cardLocation.textContent = `ที่ตั้ง: ${place.location}`;
-
-            
-            cardBody.appendChild(cardTitle);
-            cardBody.appendChild(cardLocation);
-            cardDiv.appendChild(img);
-            cardDiv.appendChild(cardBody);
-            li.appendChild(cardDiv);
-
-            
-            li.addEventListener("click", function() {
-                alert(`สถานที่: ${place.name}\nที่ตั้ง: ${place.location}`);
-            });
-
-            resultsList.appendChild(li);
-        });
-    }
-    
+onMounted(() => {
+  fetchPlaces();
 });
 
+function fetchPlaces() {
+  fetch("places.json")
+    .then(response => response.json())
+    .then(data => {
+      localStorage.setItem("places", JSON.stringify(data));
+      places.value = data;
+    })
+    .catch(error => console.error("เกิดข้อผิดพลาดในการโหลดข้อมูล: ", error));
+}
+
+const filteredPlaces = computed(() => {
+  return places.value.filter(place => place.name.toLowerCase().includes(searchText.value.toLowerCase()));
+});
+
+function showPlaceDetails(place) {
+  alert(`สถานที่: ${place.name}\nที่ตั้ง: ${place.location}`);
+}
+
+function redirectToSignUp() {
+  
+}
 </script>
 
-<style>
 
+<style>
 header h2 {
     font-weight: 500;
     color: #ffffff;
@@ -164,7 +123,6 @@ header h2 {
     border-color: #ffffff;
     border-radius: 18px;
 }
-
 
 .back-video {
   background-color: #000000;
